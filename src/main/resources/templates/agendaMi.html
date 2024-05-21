@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+ 
+<title>Insert title here</title>
+</head>
+
+<body>
+
+ 
+ <div class="container">
+  <div class="todo-container">
+    <h1>Minhas tarefas</h1>
+    <form method="post">
+    
+      <input method="post" type="text" class="taskInput" name="adicionar_tarefa" placeholder="Adicione uma tarefa..." />
+      <input method="post" type="date" class="dateInput" name="data" />
+      <button id="addTaskBtn">Adicionar Tarefa</button>
+      <ul id="taskList"></ul>
+    </form>
+  </div>
+  <div class="notes-section">
+    <h1>Anotações</h1>
+    <div id="noteInputContainer">
+      <input type="text" id="noteTitleInput" placeholder="Título da Anotação">
+      <input type="date" id="noteDateInput">
+      <textarea id="noteInput" placeholder="Digite sua anotação aqui"></textarea>
+      <button id="addNoteBtn">Adicionar Anotação</button>
+    </div>
+    <ul class="notes-list" id="notesList"></ul>
+    
+</div>
+
+<script src="{ static 'js/scriptsMi.js' }"></script>
+
+<p style="margin-left: 2%;"><a class="btn btn-primary" href= "/creador">Voltar</a></p>
+
+</div>
+ 
+ 
+ 
+</body>
+</html>
+

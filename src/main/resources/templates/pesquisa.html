@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+
+<title>Insert title here</title>
+</head>
+
+<body>
+<div class="container">
+    <h3 class="title">Paciente</h3>
+     
+  <div class="cards-container">
+    <div class="card card-paciente" th:each="usuarioDTO : ${usuarios}"  >
+        <div class="card-body">
+            <h5 class="card-title">
+                <span th:text="${usuarioDTO.usuario.nome}"></span>
+                - <span th:text="${usuarioDTO.usuario.responsavel}"></span> <!-- Exemplo de como acessar o responsável -->
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <a th:if="${usuarioDTO.anotacoes != null && !usuarioDTO.anotacoes.isEmpty()}"
+               th:href="@{/anotacaoDados/{id}(id=${usuarioDTO.usuario.id})}" class="card-link">Anotações</a>
+            <a th:href="@{/anotacao/{id}(id=${usuarioDTO.usuario.id})}" class="card-link">Criar Anotação</a>
+        </div>
+    </div>
+</div>
+  
+    <!-- Adicione mais cards conforme necessário -->
+</div>
+<div class="buttons">
+        <a class="btn btn-primary" href="/index">Voltar</a>
+    </div>
+   
+
+
+
+</body>
+</html>
+
+
+

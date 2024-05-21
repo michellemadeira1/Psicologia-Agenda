@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+    <title> Anotações</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h3>Nova Anotação</h3>
+
+    <div class="card card_anotacao">
+        <div class="card-body">
+            <h5 class="card-title">Nova Anotação</h5>
+            <textarea class="card-texarea" placeholder="Digite seu Anotação aqui"></textarea>
+            
+            <a href="/anotacaoDados" class="card-link">Salvar</a>
+            <a href="/criarAnotacao" class="card-link">Excluir</a>
+           
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a class="btn btn-primary" href="/paciente">Voltar</a>
+    </div>
+</div>
+</body>
+</html>

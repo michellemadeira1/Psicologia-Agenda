@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+
+<title>Insert title here</title>
+</head>
+
+<body>
+<div class="container">
+    <h3 class="title">Paciente</h3>
+    <form class="search-form" method="get" action="/paciente">
+        <input type="text" name="search" placeholder="Pesquisar" value="">
+        <input type="submit" value="Pesquisar">
+    </form>
+    
+    <div class="cards-container">
+        <div class="card card-paciente" th:each="obj : ${listaUsuarios}">
+            <div class="card-body">
+                <!-- Verifica se o objeto é do tipo Usuario -->
+                <h5 class="card-title" th:if="${obj.getClass().getSimpleName() == 'Usuario'}" th:text="${obj.nome}"></h5>
+                <h5 class="card-title" th:if="${obj.getClass().getSimpleName() == 'UsuarioDTO'}" th:text="${obj.usuario.nome}"></h5>
+                
+                <!-- Exibe o responsável -->
+                <p class="card-text" th:if="${obj.getClass().getSimpleName() == 'Usuario'}" th:text="'Responsável: ' + ${obj.responsavel}"></p>
+                <p class="card-text" th:if="${obj.getClass().getSimpleName() == 'UsuarioDTO'}" th:text="'Responsável: ' + ${obj.usuario.responsavel}"></p>
+                
+                <a th:if="${obj.getClass().getSimpleName() == 'Usuario'}" th:href="@{/pacienteInfo/{id}(id=${obj.id})}" class="card-link">Dados</a>
+                <a th:if="${obj.getClass().getSimpleName() == 'UsuarioDTO'}" th:href="@{/pacienteInfo/{id}(id=${obj.usuario.id})}" class="card-link">Dados</a>
+                
+                <a th:if="${obj.getClass().getSimpleName() == 'UsuarioDTO' and obj.anotacoes != null and !obj.anotacoes.isEmpty()}"
+                   th:href="@{/anotacaoDados/{id}(id=${obj.usuario.id})}" class="card-link">Anotações</a>
+                
+                <a th:if="${obj.getClass().getSimpleName() == 'UsuarioDTO'}"
+                   th:href="@{/anotacao/{id}(id=${obj.usuario.id})}" class="card-link">Criar Anotação</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <a class="btn btn-primary" href="/index">Voltar</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

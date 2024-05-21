@@ -1,0 +1,331 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(farthest-corner, #d6ae73, #cccccc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Padding para pequenas margens */
+}
+
+.container1 {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.h31 {
+    margin-bottom: 20px;
+}
+
+.card1 {
+    display: inline-block;
+    /* Transparente */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body1 {
+    padding: 20px;
+}
+
+.card-link1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.card-link1:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    width: 20px; /* Ajustar o tamanho conforme necessário */
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Estilo para componentes reutilizáveis */
+.card {
+	
+    border-radius: 8px;
+    width: 100%;
+    margin: 20px;
+    padding: 0;
+}
+
+.card-header {
+    background-color: #d6ae73;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin: 0 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* CSS Paciente */
+.container {
+    margin: 2%;
+}
+
+.title {
+    margin-top: 2%;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   
+}
+
+.search-form input[type="submit"] {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4169E1;
+    color: white;
+    cursor: pointer;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card-paciente {
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: 550px;
+    border: 2px solid  #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.card-subtitle {
+    margin-bottom: 1rem;
+    color: #6c757d;
+}
+
+.card-link {
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: #4682B4;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4169E1;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #4169E1;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.formulario textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.buttons {
+    text-align: right;
+      margin-top: 20px;
+}
+
+.card-texarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* CSS para editar anotação */
+
+.card-anotacao {
+	
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: 400px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container1, .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .card1, .card {
+        padding: 15px;
+    }
+
+    .card-body1, .card-body {
+        padding: 15px;
+    }
+
+    .card-link1, .card-link {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .icon {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h31, .card-header h3 {
+        font-size: 1.2em;
+    }
+
+    .card-body1, .card-body {
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .container1, .container {
+        width: 95%;
+    }
+
+    .form-control, .button-group {
+        width: 100%;
+    }
+}

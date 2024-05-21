@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Anotação</title>
+    <link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+</head>
+<body>
+<div class="container class="cards-container"">
+    <h3 class="title">Criar Anotação</h3>
+<form  th:action="@{/anotacaoAdicionar/{id}(id=${usuarioId})}" th:object="${anotacao}" method="post">
+        <input type="hidden" name="usuarioId" th:value="${usuarioId}">
+        <div class="form-group ">
+            <label for="texto">Anotação</label>
+            <textarea id="texto" name="texto" class="form-control" rows="4" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+    <p class="back-button"><a class="btn btn-secondary" th:href="@{/paciente}">Voltar</a></p>
+</div>
+</body>
+</html>

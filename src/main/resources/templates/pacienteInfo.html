@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+<title>Paciente Info</title>
+</head>
+<body>
+
+<div class="card card_paciente_dados" style="width: 90%;">
+    <div class="card-header">
+        <h3>Paciente Informações</h3>
+    </div>
+
+    <form method="POST" th:action="@{'/pacienteInfo2/' + ${usuario.id}}" th:object="${usuario}">
+        <div class="card-body">
+            <!-- Campo oculto para enviar o ID do paciente -->
+            <input type="hidden" name="id" th:value="${usuario.id}">
+
+            <h3 class="card-title">Nome:</h3>
+            <input type="text" class="form-control" id="nome_paciente" name="nome" th:value="${usuario.nome}" aria-describedby="nomeHelp"><br>
+
+            <h4 class="card-title">Nascimento:</h4>
+            <input type="date" class="form-control" id="nascimento_paciente" name="nascimento" th:value="${usuario.nascimento}" aria-describedby="nascimentoHelp"><br>
+
+            <h4 class="card-title">Telefone:</h4>
+            <input type="tel" class="form-control" id="telefone_paciente" name="telefone" th:value="${usuario.telefone}" aria-describedby="telefoneHelp"><br>
+
+            <h4 class="card-title">Responsável:</h4>
+            <input type="text" class="form-control" id="responsavel_paciente" name="responsavel" th:value="${usuario.responsavel}" aria-describedby="responsavelHelp"><br>
+
+            <h4 class="card-title">Início do Tratamento:</h4>
+            <input type="date" class="form-control" id="inicio_tratamento" name="tratamento" th:value="${usuario.tratamento}" aria-describedby="inicioTratamentoHelp"><br>
+
+            <h4 class="card-title">Término do Tratamento:</h4>
+            <input type="date" class="form-control" id="termino_tratamento" name="trataFinal" th:value="${usuario.trataFinal}" aria-describedby="terminoTratamentoHelp"><br>
+
+            <h4 class="card-title">Endereço:</h4>
+            <input type="text" class="form-control" id="endereco_paciente" name="endereco" th:value="${usuario.endereco}" aria-describedby="enderecoHelp"><br>
+            <input type="text" class="form-control" id="numero_paciente" name="numero" th:value="${usuario.numero}" aria-describedby="numeroHelp" placeholder="nº"><br>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <a class="btn btn-danger btn btn-primary" th:href="@{'/excluirPaciente/' + ${usuario.id}}" onclick="return confirm('Tem certeza que deseja excluir este paciente?');">Excluir</a>
+                <a class="btn btn-secondary" href="/agendaMi">Voltar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

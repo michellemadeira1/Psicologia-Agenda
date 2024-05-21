@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Anotação</title>
+  <link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <h3>Editar Anotação</h3>
+    
+    <form th:action="@{'/editarAnotacao/' + ${anotacao.id}}" th:object="${anotacao}" method="post">
+        <div class="card form-group">
+            <label for="conteudo">Conteúdo</label>
+            <textarea class="form-control" id="conteudo" th:field="*{conteudo}"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a class="btn btn-secondary" href="/paciente">Cancelar</a>
+    </form>
+</div>
+
+</body>
+</html>

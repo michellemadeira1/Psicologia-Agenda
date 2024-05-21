@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+<title>Insert title here</title>
+</head>
+
+<body>
+<div class="container">
+    <h3 class="title">Nova Anotação</h3>
+    <div class="cards-container">
+        <div class="card card-anotacao">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${usuario.nome}"></h5>
+                <h6 class="card-subtitle mb-2 text-muted" th:text="${usuario.responsavel}"></h6>
+                <form action="#" th:action="@{/anotacao2/{id}(id=${usuario.id})}" th:object="${anotacao}" method="get">
+                    <div class="mb-3">
+                        <label for="conteudo" class="form-label">Anotação</label>
+                        <!-- Supondo que você tenha um textarea ou outro input aqui -->
+                        <p id="conteudo" name="conteudo" class="form-control" th:field="*{conteudo}"></p>
+                    </div>
+                    <a th:href="@{/anotacaoNova/{id}(id=${usuario.id})}" class="card-link">Adicionar Anotação</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a class="btn btn-primary" href="/paciente">Voltar</a>
+    </div>
+</div>
+</body>
+</html>

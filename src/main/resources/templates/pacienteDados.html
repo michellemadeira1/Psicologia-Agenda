@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+
+ <div class="card card_paciente_dados" style="width: 90%;" >
+    <div class="card-header">
+      <h3>Paciente Dados</h3>
+    </div>
+    <form method="POST" action="/pacienteDados">
+    <div class="card-body" > 
+      <h3 class="card-title">Nome:</h3>
+      <input type="text" class="form-control" id="nome_paciente" aria-describedby="nomeHelp" name="nome"><br>
+
+      <h4 class="card-title">Nascimento: </h4>
+      <input type="date" class="form-control" id="nascimento_paciente" aria-describedby="nascimentoHelp" name="nascimento" ><br>
+
+      <h4 class="card-title">Telefone: </h4>
+      <input type="text" class="form-control" id="telefone_paciente" aria-describedby="telefoneHelp"name="telefone"  ><br>
+
+      <h4 class="card-title">Responsável: </h4>
+      <input type="text" class="form-control" id="responsavel_paciente" aria-describedby="responsavelHelp" name="responsavel" ><br>
+
+      <h4 class="card-title">Início do Tratamento: </h4>
+      <input type="date" class="form-control" id="inicio_tratamento" aria-describedby="inicioTratamentoHelp" name="tratamento" ><br>
+
+      <h4 class="card-title">Término do Tratamento:</h4>
+      <input type="date" class="form-control" id="termino_tratamento" aria-describedby="terminoTratamentoHelp" name="trataFinal" ><br>
+
+      <h4 class="card-title">Endereço:</h4>
+      <input type="text" class="form-control" id="endereco_paciente" aria-describedby="enderecoHelp" name="endereco" ><br>
+      <input type="text" class="form-control" id="numero_paciente" aria-describedby="numeroHelp" placeholder="nº" name="numero" ><br>
+
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-secondary" href="/agendaMi">Voltar</button>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  
+  </body>
+</html>
+  

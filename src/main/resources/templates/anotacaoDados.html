@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/stylesMi.css}">
+<title>Detalhes da Anotação</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h3>Anotação</h3>
+
+<div class="cards-container">
+    <div class="card card-anotacao">
+        <div class="card-body">
+			<h5 class="card-title" th:text="${anotacao?.usuario?.nome ?: 'Anotação não encontrada'}"></h5>   
+			<p class="card-text" th:text="${anotacao?.conteudo ?: 'Sem conteúdo'}"></p>
+             <a th:if="${anotacao != null}" th:href="@{'/editarAnotacao/' + ${anotacao.id}}" class="card-link">Editar</a>
+            <a th:if="${anotacao != null}" th:href="@{'/anotacaoExcluir/' + ${anotacao.id}}" class="card-link" onclick="return confirm('Tem certeza que deseja excluir esta anotação?');">Excluir</a> <!-- Link para excluir a anotação -->
+        </div>
+    </div>
+</div>
+    <div class="buttons">
+        <a class="btn btn-primary" href="/paciente">Voltar</a>
+    </div>
+</div>
+
+</body>
+</html>
